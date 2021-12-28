@@ -3,7 +3,7 @@ import datetime
 from django.conf import settings
 from django.shortcuts import render
 
-from .models import ProductCategory, Product
+from .models import Product, ProductCategory
 
 
 def main(request):
