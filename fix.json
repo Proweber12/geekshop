@@ -1,0 +1,39 @@
+[
+    {
+      "model": "mainapp.product",
+      "pk": 1,
+      "fields": {
+        "category": "4",
+        "name": "Супер стул"
+      }
+    },
+    {
+      "model": "mainapp.productcategory",
+      "pk": 2,
+      "fields": {
+        "name": "Деревянные стулья",
+        "description": "Стулья из дерева"
+      }
+    },
+    {
+      "model": "mainapp.product",
+      "pk": 3,
+      "fields": {
+        "category": "2",
+        "name": "Удобный деревянный стул",
+        "price": 1000.35,
+        "quantity": 100
+      }
+    },
+    {
+      "model": "mainapp.product",
+      "pk": 6,
+      "fields": {
+        "category": "4",
+        "name": "Стул с бархатом",
+        "description": "Удобный стул обитый бархатом",
+        "price": 9999.99,
+        "quantity": 10
+      }
+    }
+  ]
