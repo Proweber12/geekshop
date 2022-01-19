@@ -2,7 +2,9 @@ from django.urls import path
 
 import basketapp.views as basketapp
 
-app_name = "basketapp"
+from .apps import BasketappConfig
+
+app_name = BasketappConfig.name
 
 urlpatterns = [
     path("", basketapp.basket, name="view"),
