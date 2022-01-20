@@ -78,7 +78,7 @@ def contact(request):
 
 
 def product(request, pk):
-    title = "продукты"
+    title = "продукт"
     content = {
         "title": title,
         "links_menu": ProductCategory.objects.all(),
