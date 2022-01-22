@@ -2,7 +2,9 @@ from django.urls import path
 
 import mainapp.views as mainapp
 
-app_name = "mainapp"
+from .apps import MainappConfig
+
+app_name = MainappConfig.name
 
 urlpatterns = [
     path("", mainapp.products, name="index"),
