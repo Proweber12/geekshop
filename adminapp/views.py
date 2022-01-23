@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import EmptyPage, Paginator
 from django.shortcuts import HttpResponseRedirect, get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic.detail import DetailView
@@ -117,11 +118,15 @@ class ProductCategoryDeleteView(LoginRequiredMixin, DeleteView):
 
 
 @user_passes_test(lambda u: u.is_superuser)
-def products(request, pk):
+def products(request, pk, page=1):
     title = "админка/продукт"
     category = get_object_or_404(ProductCategory, pk=pk)
     products_list = Product.objects.filter(category__pk=pk).order_by("name")
-    content = {"title": title, "category": category, "objects": products_list, "media_url": settings.MEDIA_URL}
+
+    paginator = Paginator(products_list, 3)
+    products_paginator = paginator.page(page)
+
+    content = {"title": title, "category": category, "products": products_paginator, "media_url": settings.MEDIA_URL}
     return render(request, "adminapp/products.html", content)
 
 

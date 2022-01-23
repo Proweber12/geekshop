@@ -1,7 +1,7 @@
 import random
 
 from django.conf import settings
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.core.paginator import EmptyPage, Paginator
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 
