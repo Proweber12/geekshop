@@ -15,11 +15,14 @@
 <a href="{% url 'auth:register' %}" class="btn btn-outline-secondary btn-block" role="button">
     зарегистрироваться
 </a>
-<a href="{% url 'social:begin' 'github' %}?next=/" class="btn btn-outline-secondary btn-block" role="button">
-    Вход через <i class="fa fa-github" aria-hidden="true"></i>
+<a href="{% url 'social:begin' 'google-oauth2' %}?next=/" class="btn btn-outline-secondary btn-block" role="button">
+    Вход через <i class="fa fa-google" aria-hidden="true"></i>
 </a>
 <a href="{% url 'social:begin' 'github' %}?next=/" class="btn btn-outline-secondary btn-block" role="button">
     Вход через <i class="fa fa-github" aria-hidden="true"></i>
+</a>
+<a href="{% url 'social:begin' 'vk-oauth2' %}?next=/" class="btn btn-outline-secondary btn-block" role="button">
+    Вход через <i class="fa fa-vk" aria-hidden="true"></i>
 </a>
 
 {% endblock content %}
