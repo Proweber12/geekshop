@@ -14,7 +14,7 @@ class ShopUserAdminEditForm(ShopUserEditForm):
 class ProductCategoryEditForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
+        for field in self.fields.values():
             field.widget.attrs["class"] = "form-control"
             field.help_text = ""
 
@@ -26,7 +26,7 @@ class ProductCategoryEditForm(forms.ModelForm):
 class ProductEditForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProductEditForm, self).__init__(*args, **kwargs)
-        for field_name, field in self.fields.items():
+        for field in self.fields.values():
             field.widget.attrs["class"] = "form-control"
             field.help_text = ""
 
