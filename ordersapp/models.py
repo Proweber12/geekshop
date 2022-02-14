@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.shortcuts import get_object_or_404
 
 from mainapp.models import Product
 
@@ -32,7 +33,7 @@ class Order(models.Model):
         verbose_name_plural = "заказы"
 
     def __str__(self):
-        return "Текущий заказ: {}".format(self.id)
+        return f"Текущий заказ: {self.id}"
 
     def get_total_quantity(self):
         items = self.orderitems.select_related()
@@ -62,3 +63,7 @@ class OrderItem(models.Model):
 
     def get_product_cost(self):
         return self.product.price * self.quantity
+
+    @staticmethod
+    def get_item(pk):
+        return get_object_or_404(OrderItem, pk=pk)
