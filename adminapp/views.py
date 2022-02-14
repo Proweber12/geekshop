@@ -103,6 +103,15 @@ class ProductCategoryUpdateView(LoginRequiredMixin, UpdateView):
         context = super(ProductCategoryUpdateView, self).get_context_data(**kwargs)
         context["title"] = "категории/редактирование"
         return context
+    
+    def form_valid(self, form):
+        self.object = self.get_object()
+        self.object.is_active = True
+        self.object.save()
+        for item in self.object.product_set.all():
+            item.is_active = True
+            item.save()
+        return HttpResponseRedirect(self.get_success_url())
 
 
 class ProductCategoryDeleteView(LoginRequiredMixin, DeleteView):
@@ -114,6 +123,9 @@ class ProductCategoryDeleteView(LoginRequiredMixin, DeleteView):
         self.object = self.get_object()
         self.object.is_active = False
         self.object.save()
+        for item in self.object.product_set.all():
+            item.is_active = False
+            item.save()
         return HttpResponseRedirect(self.get_success_url())
 
 
