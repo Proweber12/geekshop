@@ -27,6 +27,7 @@ class Product(models.Model):
     def get_items():
         return Product.objects.filter(is_active=True).order_by("category", "name")
 
+
 class Contact(models.Model):
     city = models.CharField(verbose_name="город", max_length=128, default="Москва")
     phone = models.CharField(verbose_name="номер телефона", max_length=50)

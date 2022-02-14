@@ -103,7 +103,7 @@ class ProductCategoryUpdateView(LoginRequiredMixin, UpdateView):
         context = super(ProductCategoryUpdateView, self).get_context_data(**kwargs)
         context["title"] = "категории/редактирование"
         return context
-    
+
     def form_valid(self, form):
         self.object = self.get_object()
         self.object.is_active = True

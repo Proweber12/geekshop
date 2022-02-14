@@ -2,8 +2,8 @@ from django.db import transaction
 from django.db.models.signals import pre_delete, pre_save
 from django.dispatch import receiver
 from django.forms import inlineformset_factory
-from django.shortcuts import HttpResponseRedirect, get_object_or_404
 from django.http import JsonResponse
+from django.shortcuts import HttpResponseRedirect, get_object_or_404
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from django.views.generic.detail import DetailView
@@ -140,6 +140,7 @@ def product_quantity_update_save(instance, sender, **kwargs):
 def product_quantity_update_delete(instance, **kwargs):
     instance.product.quantity += instance.quantity
     instance.product.save()
+
 
 def get_product_price(request, pk):
     if request.is_ajax():
