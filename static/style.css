@@ -43,14 +43,6 @@ button.last {
     min-width: 400px;
 }
 
-.td1.order.formset_td {
-    /*width: 70%;*/
-}
-
-.td2.order.formset_td {
-    /*width: 50px;*/
-}
-
 .td3.order.formset_td {
     /*width: 50px;*/
     text-align: center;
@@ -179,6 +171,7 @@ body {
     height: 125px;
     margin: 15px auto;
     position: relative;
+    display: flex;
 }
 
 .product_record.not_active {
@@ -1853,7 +1846,7 @@ td:first-child {
 
 .related-products .block {
     float: left;
-    margin-right: 30px;
+    margin-right: 15px;
     display: block;
     height: 370px;
     width: 370px;
