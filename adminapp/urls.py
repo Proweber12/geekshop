@@ -18,6 +18,7 @@ urlpatterns = [
     re_path(r"^categories/delete/(?P<pk>\d+)/$", adminapp.ProductCategoryDeleteView.as_view(), name="category_delete"),
     re_path(r"^products/create/category/(?P<pk>\d+)/$", adminapp.product_create, name="product_create"),
     re_path(r"^products/read/category/(?P<pk>\d+)/$", adminapp.products, name="products"),
+    re_path(r"^products/read/category/(?P<pk>\d+)/page/(?P<page>\d+)/$", adminapp.products, name="page"),
     re_path(r"^products/read/(?P<pk>\d+)/$", adminapp.ProductDetailView.as_view(), name="product_read"),
     re_path(r"^products/update/(?P<pk>\d+)/$", adminapp.product_update, name="product_update"),
     re_path(r"^products/delete/(?P<pk>\d+)/$", adminapp.product_delete, name="product_delete"),

@@ -42,6 +42,19 @@
         "model": "mainapp.product",
         "pk": 4,
         "fields": {
+            "category": 1,
+            "name": "Диван",
+            "image": "products_images/product-3-sm.jpg",
+            "short_desc": "Диван удобный",
+            "description": "Диван удобный, серый",
+            "price": "8467.99",
+            "quantity": 23
+        }
+    },
+    {
+        "model": "mainapp.product",
+        "pk": 5,
+        "fields": {
             "category": 2,
             "name": "стандарт",
             "image": "products_images/product-4.jpg",
@@ -53,7 +66,20 @@
     },
     {
         "model": "mainapp.product",
-        "pk": 5,
+        "pk": 6,
+        "fields": {
+            "category": 2,
+            "name": "Часы",
+            "image": "products_images/product-4-sm.jpg",
+            "short_desc": "Часы настенные",
+            "description": "Серые настенные часы",
+            "price": "89.90",
+            "quantity": 45
+        }
+    },
+    {
+        "model": "mainapp.product",
+        "pk": 7,
         "fields": {
             "category": 2,
             "name": "премиум",
@@ -66,7 +92,20 @@
     },
     {
         "model": "mainapp.product",
-        "pk": 6,
+        "pk": 8,
+        "fields": {
+            "category": 2,
+            "name": "Лампа",
+            "image": "products_images/product-5-sm.jpg",
+            "short_desc": "Лампа навесная",
+            "description": "Чёрная навесная лампа",
+            "price": "187.24",
+            "quantity": 52
+        }
+    },
+    {
+        "model": "mainapp.product",
+        "pk": 9,
         "fields": {
             "category": 3,
             "name": "новинка",
@@ -79,7 +118,7 @@
     },
     {
         "model": "mainapp.product",
-        "pk": 7,
+        "pk": 10,
         "fields": {
             "category": 3,
             "name": "прогресс",
@@ -92,7 +131,7 @@
     },
     {
         "model": "mainapp.product",
-        "pk": 8,
+        "pk": 11,
         "fields": {
             "category": 4,
             "name": "венеция",
@@ -105,7 +144,7 @@
     },
     {
         "model": "mainapp.product",
-        "pk": 9,
+        "pk": 12,
         "fields": {
             "category": 4,
             "name": "тоскана",
@@ -118,7 +157,7 @@
     },
     {
         "model": "mainapp.product",
-        "pk": 10,
+        "pk": 13,
         "fields": {
             "category": 4,
             "name": "рим",
@@ -126,6 +165,19 @@
             "short_desc": "удачные пропорции",
             "description": "компактность и функциональность",
             "price": "8357.77",
+            "quantity": 8
+        }
+    },
+    {
+        "model": "mainapp.product",
+        "pk": 14,
+        "fields": {
+            "category": 4,
+            "name": "Стулья",
+            "image": "products_images/product-12.jpg",
+            "short_desc": "Стулья мягкие",
+            "description": "Бархатные мягкие стулья",
+            "price": "4357.77",
             "quantity": 8
         }
     }
