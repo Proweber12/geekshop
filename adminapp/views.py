@@ -112,16 +112,16 @@ class ProductCategoryUpdateView(LoginRequiredMixin, UpdateView):
         if "discount" in form.cleaned_data:
             discount = form.cleaned_data["discount"]
             if discount:
-                print(f"применяется скидка {discount}% к товарам категории {self.object.name}   {form.cleaned_data}")
+                # print(f"применяется скидка {discount}% к товарам категории {self.object.name}   {form.cleaned_data}")
                 self.object.product_set.update(price=F("price") * (1 - discount / 100))
-                db_profile_by_type(self.__class__, "UPDATE", connection.queries)
+                # db_profile_by_type(self.__class__, "UPDATE", connection.queries)
 
         if "extra_charge" in form.cleaned_data:
             extra_charge = form.cleaned_data["extra_charge"]
             if extra_charge:
-                print(f"применяется наценка {extra_charge}% к товарам категории {self.object.name}")
+                # print(f"применяется наценка {extra_charge}% к товарам категории {self.object.name}")
                 self.object.product_set.update(price=F("price") * (1 + extra_charge / 100))
-                db_profile_by_type(self.__class__, "UPDATE", connection.queries)
+                # db_profile_by_type(self.__class__, "UPDATE", connection.queries)
 
         return super().form_valid(form)
 
