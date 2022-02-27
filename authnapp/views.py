@@ -45,9 +45,9 @@ def register(request):
         if register_form.is_valid():
             user = register_form.save()
             if send_verify_mail(user):
-                print("сообщение для подтверждения регистрации отправлено")
+                # print("сообщение для подтверждения регистрации отправлено")
                 return HttpResponseRedirect(reverse("auth:login"))
-            print("ошибка отправки сообщения для подтверждения регистрации")
+            # print("ошибка отправки сообщения для подтверждения регистрации")
             return HttpResponseRedirect(reverse("auth:login"))
     else:
         register_form = ShopUserRegisterForm()
@@ -84,7 +84,7 @@ def send_verify_mail(user):
     на портале {settings.DOMAIN_NAME} перейдите по ссылке: \
     \n{settings.DOMAIN_NAME}{verify_link}"
 
-    print(f"from: {settings.EMAIL_HOST_USER}, to: {user.email}")
+    # print(f"from: {settings.EMAIL_HOST_USER}, to: {user.email}")
     return send_mail(
         title,
         message,
@@ -98,16 +98,15 @@ def verify(request, email, activation_key):
     try:
         user = ShopUser.objects.get(email=email)
         if user.activation_key == activation_key and not user.is_activation_key_expired():
-            print(f"user {user} is activated")
+            # print(f"user {user} is activated")
             user.is_active = True
             user.save()
             auth.login(request, user, backend="django.contrib.auth.backends.ModelBackend")
 
             return render(request, "authnapp/verification.html")
-        print(f"error activation user: {user}")
+        # print(f"error activation user: {user}")
         return render(request, "authnapp/verification.html")
 
     except Exception as e:
-        print(f"error activation user : {e.args}")
-
-    return HttpResponseRedirect(reverse("main"))
+        # print(f"error activation user : {e.args}")
+        return HttpResponseRedirect(reverse("main"))
