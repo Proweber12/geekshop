@@ -8,6 +8,7 @@
 * `Django` < 3.3
 * `VSCode`
 * `SQLite3`
+* `PostgreSQL`
 
 ## Лицензия
 
