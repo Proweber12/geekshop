@@ -4,7 +4,7 @@
 
 ## Стек
 
-* `Python` > 3.7
+* `Python` > 3.8
 * `Django` < 3.3
 * `VSCode`
 * `SQLite3`
